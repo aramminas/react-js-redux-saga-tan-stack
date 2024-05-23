@@ -5,10 +5,10 @@ import {
   Route,
 } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
-import Dashboard from "./components/pages/Dashboard";
-import Customers from "./components/pages/Customers";
-import Products from "./components/pages/Products";
-import NotFound from "./components/pages/NotFound";
+import Dashboard from "./pages/Dashboard";
+import Customers from "./pages/Customers";
+import Products from "./pages/Products";
+import NotFound from "./pages/NotFound";
 
 function AppRouter() {
   return (

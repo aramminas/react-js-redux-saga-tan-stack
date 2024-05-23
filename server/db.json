@@ -1,0 +1,55 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "customers": [
+    {
+      "id": "1",
+      "imgUrl": "",
+      "firstName": "Artan",
+      "lastName": "Theodard",
+      "profession": "Barista",
+      "description": "A barista is a person, usually a coffeehouse employee, who prepares and serves espresso-based coffee drinks and other beverages."
+    },
+    {
+      "id": "2",
+      "imgUrl": "",
+      "firstName": "Kay",
+      "lastName": "Hayden",
+      "profession": "Banker",
+      "description": "A banker provides financial banking services and typically works in a bank. "
+    },
+    {
+      "id": "3",
+      "imgUrl": "",
+      "firstName": "Axelle",
+      "lastName": "Berenike",
+      "profession": "Camp Counselor",
+      "description": "A Camp Counselor is someone who guides and ensures the safety of children as they engage in camp activities."
+    }
+  ]
+}

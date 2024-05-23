@@ -8,8 +8,8 @@ function Products() {
         <Paper
           sx={{
             p: 2,
-            display: 'flex',
-            flexDirection: 'column',
+            display: "flex",
+            flexDirection: "column",
             minHeight: 240,
           }}
         >
