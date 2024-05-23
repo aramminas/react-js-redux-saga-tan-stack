@@ -8,8 +8,8 @@ function Dashboard() {
         <Paper
           sx={{
             p: 2,
-            display: 'flex',
-            flexDirection: 'column',
+            display: "flex",
+            flexDirection: "column",
             height: 240,
           }}
         >
@@ -20,8 +20,8 @@ function Dashboard() {
         <Paper
           sx={{
             p: 2,
-            display: 'flex',
-            flexDirection: 'column',
+            display: "flex",
+            flexDirection: "column",
             height: 240,
           }}
         >
@@ -29,12 +29,10 @@ function Dashboard() {
         </Paper>
       </Grid>
       <Grid item xs={12}>
-        <Paper sx={{p: 2, display: 'flex', flexDirection: 'column'}}>
-          Content 3
-        </Paper>
+        <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>Content 3</Paper>
       </Grid>
     </Grid>
-  )
+  );
 }
 
 export default Dashboard;

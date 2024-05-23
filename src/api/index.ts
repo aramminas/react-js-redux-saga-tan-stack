@@ -2,7 +2,7 @@ import { Methods } from "@/api/types";
 
 const apiUrl = process.env.API_URL;
 
-export const fetcher = async ( method = Methods.GET, path, data = {} ) => {
+export const fetcher = async (method = Methods.GET, path, data = {}) => {
   if (method === Methods.GET || method === Methods.DELETE) {
     const response = await fetch(`${apiUrl}/${path}`, { method: method });
     return await response.json();

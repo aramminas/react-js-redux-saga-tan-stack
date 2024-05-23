@@ -79,9 +79,7 @@ function Customers() {
             </Button>
           </Box>
           <Divider variant="fullWidth" component="hr" />
-          <List
-            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-          >
+          <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
             {customers.map((customer) => {
               return <CustomersItems key={customer.id} {...customer} />;
             })}

@@ -9,10 +9,9 @@ Currently, two official plugins are available:
 
 ## ⭕ Json-Server
 
->
 > !🚩 Important !🚩
->- need at first run json server
 >
+> - need at first run json server
 
 ## Expanding the ESLint configuration
 
@@ -24,12 +23,12 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`

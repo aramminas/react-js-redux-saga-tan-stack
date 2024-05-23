@@ -1,31 +1,31 @@
-import {Link} from "react-router-dom";
-import List from '@mui/material/List';
-import PeopleIcon from '@mui/icons-material/People';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import CategoryIcon from '@mui/icons-material/Category';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ListItemButton from '@mui/material/ListItemButton';
+import { Link } from "react-router-dom";
+import List from "@mui/material/List";
+import PeopleIcon from "@mui/icons-material/People";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import CategoryIcon from "@mui/icons-material/Category";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import ListItemButton from "@mui/material/ListItemButton";
 
 export const mainListItems = (
   <List component="nav">
-    <ListItemButton to='/' component={Link}>
+    <ListItemButton to="/" component={Link}>
       <ListItemIcon>
-        <DashboardIcon/>
+        <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard"/>
+      <ListItemText primary="Dashboard" />
     </ListItemButton>
-    <ListItemButton to='/customers' component={Link}>
+    <ListItemButton to="/customers" component={Link}>
       <ListItemIcon>
-        <PeopleIcon/>
+        <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers"/>
+      <ListItemText primary="Customers" />
     </ListItemButton>
-    <ListItemButton to='/products' component={Link}>
+    <ListItemButton to="/products" component={Link}>
       <ListItemIcon>
-        <CategoryIcon/>
+        <CategoryIcon />
       </ListItemIcon>
-      <ListItemText primary="Products"/>
+      <ListItemText primary="Products" />
     </ListItemButton>
   </List>
 );

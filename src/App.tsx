@@ -4,10 +4,9 @@ import AppRouter from "./router";
 function App() {
   return (
     <React.StrictMode>
-      <AppRouter/>
+      <AppRouter />
     </React.StrictMode>
-  )
+  );
 }
 
-export default App
-
+export default App;
