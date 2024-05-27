@@ -24,32 +24,36 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "name": "developer"
   },
+  "products": [],
   "customers": [
     {
-      "id": "1",
-      "imgUrl": "",
+      "id": "a3ba",
       "firstName": "Artan",
       "lastName": "Theodard",
       "profession": "Barista",
-      "description": "A barista is a person, usually a coffeehouse employee, who prepares and serves espresso-based coffee drinks and other beverages."
+      "description": "A barista is a person, usually a coffeehouse employee, who prepares and serves espresso-based coffee drinks and other beverages.",
+      "gender": "male",
+      "imgUrl": "https://avatar.iran.liara.run/public/boy?username=Artan+Theodard"
     },
     {
-      "id": "2",
-      "imgUrl": "",
+      "id": "c979",
       "firstName": "Kay",
       "lastName": "Hayden",
       "profession": "Banker",
-      "description": "A banker provides financial banking services and typically works in a bank. "
+      "description": "A banker provides financial banking services and typically works in a bank.",
+      "gender": "female",
+      "imgUrl": "https://avatar.iran.liara.run/public/girl?username=Kay+Hayden"
     },
     {
-      "id": "3",
-      "imgUrl": "",
+      "id": "a529",
       "firstName": "Axelle",
       "lastName": "Berenike",
       "profession": "Camp Counselor",
-      "description": "A Camp Counselor is someone who guides and ensures the safety of children as they engage in camp activities."
+      "description": "A Camp Counselor is someone who guides and ensures the safety of children as they engage in camp activities.",
+      "gender": "male",
+      "imgUrl": "https://avatar.iran.liara.run/public/boy?username=Axelle+Berenike"
     }
   ]
 }

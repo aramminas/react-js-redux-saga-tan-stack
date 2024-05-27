@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
@@ -6,6 +7,9 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 
 import { CustomerType } from "@/api/types";
+import { CustomerActions } from "@/components/types";
+import ActionButtons from "@/components/basic/ActionButtons";
+import EllipsisTooltip from "@/components/basic/EllipsisTooltip";
 
 function CustomersItems({
   id,
@@ -14,15 +18,25 @@ function CustomersItems({
   lastName,
   description,
   profession,
-}: CustomerType) {
+  handleEdit,
+  handleDelete,
+}: CustomerType & CustomerActions) {
+  const [isHovered, setHover] = useState(false);
+
   return (
     <>
-      <ListItem alignItems="flex-start" key={id}>
+      <ListItem
+        alignItems="flex-start"
+        key={id}
+        sx={{ position: "relative" }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+      >
         <ListItemAvatar>
           <Avatar alt={`${firstName} ${lastName}`} src={imgUrl || ""} />
         </ListItemAvatar>
         <ListItemText
-          primary={profession}
+          primary={<EllipsisTooltip text={profession} width={230} />}
           secondary={
             <>
               <Typography
@@ -31,12 +45,13 @@ function CustomersItems({
                 variant="body2"
                 color="text.primary"
               >
-                {firstName} {lastName}
+                {firstName}, {lastName}
               </Typography>
               {` — ${description}`}
             </>
           }
         />
+        {isHovered && <ActionButtons id={id} handleEdit={handleEdit} handleDelete={handleDelete} />}
       </ListItem>
       <Divider variant="inset" component="li" />
     </>
