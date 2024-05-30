@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
-import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
+import { useDispatch, useSelector } from "react-redux";
+
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import Badge from "@mui/material/Badge";
@@ -14,11 +15,16 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import CssBaseline from "@mui/material/CssBaseline";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import CircularProgress from "@mui/material/CircularProgress";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
+import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 
-import Copyright from "./files/Copyright";
-import { mainListItems } from "./files/listItems";
+import Copyright from "@/components/Layout/files/Copyright";
+import { mainListItems } from "@/components/Layout/files/listItems";
+import { getFavoriteProducts } from "@/redux/actions/favoriteProducts/getFavoriteProducts";
 
 const drawerWidth: number = 240;
 
@@ -74,8 +80,17 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open" 
 const defaultTheme = createTheme();
 
 function Layout() {
-  const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
   const [badge] = useState(0);
+  const [open, setOpen] = useState(false);
+  const { data: favouriteProducts, loading: favoriteLoading } = useSelector(
+    (state) => state.favoriteProducts,
+  );
+
+  useEffect(() => {
+    dispatch(getFavoriteProducts());
+  }, []);
+
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -105,6 +120,17 @@ function Layout() {
             <Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
               React App
             </Typography>
+            <Link to="/favourite-products">
+              <IconButton color="inherit">
+                {favoriteLoading ? (
+                  <CircularProgress sx={{ color: "#ffffff" }} size={20} />
+                ) : (
+                  <Badge badgeContent={favouriteProducts?.length} color="secondary">
+                    <FavoriteIcon sx={{ color: "#ffffff" }} />
+                  </Badge>
+                )}
+              </IconButton>
+            </Link>
             <IconButton color="inherit">
               <Badge badgeContent={badge} color="secondary">
                 <NotificationsIcon />

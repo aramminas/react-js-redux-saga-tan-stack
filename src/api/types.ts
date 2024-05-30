@@ -15,7 +15,7 @@ export type CustomerType = {
   description: string;
 };
 
-export type ProductType = {
+export type ProductDataType = {
   id: string;
   name: string;
 };

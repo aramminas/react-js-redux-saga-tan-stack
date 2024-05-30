@@ -1,11 +1,17 @@
 import { combineReducers } from "redux";
-import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
-import { rootSaga } from "./sagas/rootSaga";
-import customersReducer from "./reducers/customers";
-import productsReducer from "./reducers/products";
+import { configureStore } from "@reduxjs/toolkit";
 
-const reducer = combineReducers({ customers: customersReducer, products: productsReducer });
+import { rootSaga } from "@/redux/sagas/rootSaga";
+import customersReducer from "@/redux/reducers/customers";
+import productsReducer from "@/redux/reducers/products";
+import favoriteProductsReducer from "@/redux/reducers/favoriteProducts";
+
+const reducer = combineReducers({
+  customers: customersReducer,
+  products: productsReducer,
+  favoriteProducts: favoriteProductsReducer,
+});
 
 const sagaMiddleware = createSagaMiddleware();
 const middleware = [sagaMiddleware];

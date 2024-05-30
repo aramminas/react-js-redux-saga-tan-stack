@@ -17,7 +17,7 @@ import { createCustomer } from "@/redux/actions/customers/createCustomer";
 import { deleteCustomer } from "@/redux/actions/customers/deleteCustomer";
 
 import LoadingProgress from "@/components/basic/LoadingProgress";
-import CustomersItems from "@/components/customers/CustomersItems";
+import CustomersItem from "@/components/customers/CustomersItem";
 import EditCustomerDialog from "@/components/customers/EditCustomerDialog";
 import DeleteCustomerDialog from "@/components/customers/DeleteCustomerDialog";
 import CreateCustomerDialog from "@/components/customers/CreateCustomerDialog";
@@ -34,7 +34,7 @@ function Customers() {
     dispatch(getCustomers());
   }, []);
 
-  const handleClickOpen = () => {
+  const handleAddOpen = () => {
     setOpen(true);
   };
 
@@ -86,7 +86,7 @@ function Customers() {
           >
             <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <Typography variant="h4">Customers</Typography>
-              <Button variant="contained" onClick={handleClickOpen} startIcon={<AddIcon />}>
+              <Button variant="contained" onClick={handleAddOpen} startIcon={<AddIcon />}>
                 Add Customer
               </Button>
             </Box>
@@ -99,7 +99,7 @@ function Customers() {
                 {!!customers.length &&
                   customers.map((customer) => {
                     return (
-                      <CustomersItems
+                      <CustomersItem
                         key={customer.id}
                         handleDelete={handleDeleteOpen}
                         handleEdit={handleEditOpen}

@@ -18,13 +18,13 @@ export const fetcherPost = async (path, data: { [ket: string]: string | number }
   return await response.json();
 };
 
-export const fetcherGet = async (path, params = "") => {
-  const response = await fetch(`${apiUrl}/${path}${params}`, { method: Methods.GET });
+export const fetcherGet = async (path, query: string = "") => {
+  const response = await fetch(`${apiUrl}/${path}${query}`, { method: Methods.GET });
   return await response.json();
 };
 
-export const fetcherDelete = async (path, data: { id?: string } | {} = {}) => {
-  const response = await fetch(`${apiUrl}/${path}/${data?.id || "0"}`, { method: Methods.DELETE });
+export const fetcherDelete = async (path, id?: string | number) => {
+  const response = await fetch(`${apiUrl}/${path}/${id || "0"}`, { method: Methods.DELETE });
   return await response.json();
 };
 

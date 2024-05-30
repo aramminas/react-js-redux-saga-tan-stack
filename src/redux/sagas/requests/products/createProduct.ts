@@ -1,7 +1,7 @@
 import { fetcherPost } from "@/api";
-import { ProductType } from "@/api/types";
+import { ProductDataType } from "@/api/types";
 
-const createProduct = (data: ProductType) => {
+const createProduct = (data: ProductDataType) => {
   return fetcherPost(`products`, data);
 };
 export default createProduct;

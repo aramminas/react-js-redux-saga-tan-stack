@@ -4,6 +4,8 @@ import Layout from "./components/Layout/Layout";
 import Dashboard from "./pages/Dashboard";
 import Customers from "./pages/Customers";
 import Products from "./pages/Products";
+import FavoriteProduct from "@/pages/FavoriteProducts";
+
 import NotFound from "./pages/NotFound";
 
 function AppRouter() {
@@ -14,6 +16,7 @@ function AppRouter() {
           <Route index element={<Dashboard />} />
           <Route path="/customers" element={<Customers />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/favourite-products" element={<FavoriteProduct />} />
 
           <Route path="*" element={<NotFound />} />
         </Route>

@@ -11,7 +11,7 @@ import { CustomerActions } from "@/components/types";
 import ActionButtons from "@/components/basic/ActionButtons";
 import EllipsisTooltip from "@/components/basic/EllipsisTooltip";
 
-function CustomersItems({
+function CustomersItem({
   id,
   imgUrl,
   firstName,
@@ -58,4 +58,4 @@ function CustomersItems({
   );
 }
 
-export default CustomersItems;
+export default CustomersItem;
