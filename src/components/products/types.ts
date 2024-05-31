@@ -1,5 +1,3 @@
-export type FavoriteProductType = Omit<ProductType, "id"> & { id: string; _id: number };
-
 export type ProductIds = number[];
 
 export type ProductCartItemProps = {
@@ -16,24 +14,25 @@ export type ProductType = {
   discountPercentage: number;
   rating: number;
   stock: number;
-  tags: ProductTags;
+  tags: ProductTagsType;
   brand: string;
   sku: string;
   weight: number;
-  dimensions: ProductDimensions;
+  dimensions: ProductDimensionsType;
   warrantyInformation: string;
   shippingInformation: string;
   availabilityStatus: string;
   reviews: ProductReviews[];
   returnPolicy: string;
   minimumOrderQuantity: number;
-  meta: ProductMeta;
+  meta: ProductMetaType;
   thumbnail: string;
   images: string[];
 };
 
-export type ProductTags = string[];
-export type ProductDimensions = {
+export type ProductTagsType = string[];
+
+export type ProductDimensionsType = {
   width: number;
   height: number;
   depth: number;
@@ -46,7 +45,7 @@ export type ProductReviews = {
   reviewerEmail: string;
 };
 
-export type ProductMeta = {
+export type ProductMetaType = {
   createdAt: string;
   updatedAt: string;
   barcode: string;

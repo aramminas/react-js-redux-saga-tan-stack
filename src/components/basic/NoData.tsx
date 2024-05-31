@@ -27,9 +27,7 @@ const StyledGridOverlay = styled("div")(({ theme }) => ({
 
 function NoData() {
   return (
-    <Box
-      sx={{ display: "flex", justifyContent: "center", padding: 0, width: "100%" }}
-    >
+    <Box sx={{ display: "flex", justifyContent: "center", padding: 0, width: "100%" }}>
       <StyledGridOverlay>
         <svg width="120" height="100" viewBox="0 0 184 152" aria-hidden focusable="false">
           <g fill="none" fillRule="evenodd">

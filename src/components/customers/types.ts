@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { CustomerType } from "@/api/types";
-import { invalid_type_error, required_error, short_error } from "@/components/customers/constants";
+import { invalid_type_error, required_error, short_error } from "@/components/constants";
 
 export const customerSchema = z.object({
   firstName: z

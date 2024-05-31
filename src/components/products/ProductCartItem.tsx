@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import Box from "@mui/material/Box";
+
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
@@ -11,8 +11,9 @@ import CardContent from "@mui/material/CardContent";
 import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
 import DeleteForeverTwoToneIcon from "@mui/icons-material/DeleteForeverTwoTone";
 
+import { searchUrl } from "@/helpers";
+import TotalPrice from "@/components/basic/TotalPrice";
 import { ProductCartItemProps } from "@/components/products/types";
-import ProductRating from "@/components/products/ProductRating";
 import { addFavoriteProduct } from "@/redux/actions/favoriteProducts/addFavoriteProduct";
 import { deleteFavoriteProduct } from "@/redux/actions/favoriteProducts/deleteFavoriteProduct";
 
@@ -44,15 +45,7 @@ function ProductCartItem({ product, ids }: ProductCartItemProps) {
           <Typography variant="body2" color="text.secondary">
             {description}
           </Typography>
-          <Box sx={{ marginTop: 2, display: "flex" }}>
-            <Box sx={{ fontSize: 12, width: 100, paddingLeft: 2 }}>
-              <Typography variant="subtitle1" sx={{ fontSize: 11, color: "text.secondary" }}>
-                Total price:
-              </Typography>
-              <Typography sx={{ fontWeight: "bolder" }}>${price}</Typography>
-            </Box>
-            <ProductRating rating={rating} />
-          </Box>
+          <TotalPrice price={price} rating={rating} />
         </CardContent>
         <CardActions>
           {ids.includes(id) ? (
@@ -72,11 +65,7 @@ function ProductCartItem({ product, ids }: ProductCartItemProps) {
               Add to favorites
             </Button>
           )}
-          <LinkWrapper
-            target="_blank"
-            size="small"
-            href={`https://www.google.com/search?q=${title}`}
-          >
+          <LinkWrapper target="_blank" size="small" href={searchUrl(title)}>
             <Button size="small">Learn More</Button>
           </LinkWrapper>
         </CardActions>

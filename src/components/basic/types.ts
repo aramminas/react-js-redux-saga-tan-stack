@@ -7,3 +7,5 @@ export type RadioGenderType = {
 };
 
 export type EllipsisTooltipProps = { text: string; width: string | number };
+
+export type TotalPriceProps = { rating: number; price: number };

@@ -11,8 +11,8 @@ import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 
 import NoData from "@/components/basic/NoData";
+import { prodLimit } from "@/components/constants";
 import { fetcherGetProduct } from "@/api/productApi";
-import { prodLimit } from "@/components/products/constants";
 import CategoryList from "@/components/products/CategoryList";
 import LoadingProgress from "@/components/basic/LoadingProgress";
 import ProductCartItem from "@/components/products/ProductCartItem";
