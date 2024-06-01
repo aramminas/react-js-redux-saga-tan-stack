@@ -6,7 +6,7 @@ import { EllipsisTooltipProps } from "@/components/basic/types";
 function EllipsisTooltip({ text, width }: EllipsisTooltipProps) {
   return (
     <Tooltip TransitionComponent={Zoom} title={text} placement="top-start" arrow>
-      <div style={{ width: width, whiteSpace: "nowrap" }}>
+      <Box component="div" style={{ width: width, whiteSpace: "nowrap" }}>
         <Box
           component="div"
           sx={{
@@ -16,7 +16,7 @@ function EllipsisTooltip({ text, width }: EllipsisTooltipProps) {
         >
           {text}
         </Box>
-      </div>
+      </Box>
     </Tooltip>
   );
 }

@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type ProductIds = number[];
 
 export type ProductCartItemProps = {
@@ -65,4 +67,11 @@ export type CategoryListProps = {
 
 export type ProductRatingProps = {
   rating: number;
+  direction?: "row" | "column";
+};
+
+export type StyledTypographyProps = {
+  variant: string;
+  text: string | ReactNode;
+  styles?: { [key: string]: string | number };
 };

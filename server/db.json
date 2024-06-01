@@ -23,8 +23,12 @@
       "postId": "1"
     }
   ],
-  "profile": {
-    "name": "developer"
+  "userProfile": {
+    "firstName": "Adam",
+    "lastName": "Scott",
+    "role": "Developer",
+    "email": "adam.scott@gmail.com",
+    "avatar": "https://avatar.iran.liara.run/public/boy?username=Adam+Scott"
   },
   "products": [],
   "favoriteProducts": [],

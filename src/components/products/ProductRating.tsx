@@ -4,14 +4,14 @@ import StarIcon from "@mui/icons-material/Star";
 
 import { ProductRatingProps } from "@/components/products/types";
 
-function ProductRating({ rating }: ProductRatingProps) {
+function ProductRating({ rating, direction = "row" }: ProductRatingProps) {
   return (
     <Box
       sx={{
         width: 200,
         display: "flex",
         alignItems: "center",
-        justifyContent: "flex-end",
+        justifyContent: direction === "row" ? "flex-end" : "center",
       }}
     >
       <Rating

@@ -1,6 +1,7 @@
 import { takeLatest, all, fork } from "redux-saga/effects";
 
 import {
+  GET_DASHBOARD_DATA_START,
   GET_CUSTOMERS_START,
   CREATE_CUSTOMER_START,
   EDIT_CUSTOMERS_START,
@@ -11,6 +12,9 @@ import {
   ADD_FAVORITE_PRODUCT_START,
   DELETE_FAVORITE_PRODUCT_START,
 } from "@/redux/actionTypes";
+
+// dashboard
+import { getDashboardHandler } from "@/redux/sagas/handlers/dashboardData/getDashboardData";
 // customers
 import { getCustomersHandler } from "@/redux/sagas/handlers/customers/getCustomers";
 import { createCustomerHandler } from "@/redux/sagas/handlers/customers/createCustomer";
@@ -25,6 +29,9 @@ import { addFavoriteProductHandler } from "@/redux/sagas/handlers/favoriteProduc
 import { deleteFavoriteProductHandler } from "@/redux/sagas/handlers/favoriteProducts/deleteFavoriteProduct";
 
 export function* watcherSagaProducts() {
+  // Dashboard
+  yield takeLatest(GET_DASHBOARD_DATA_START, getDashboardHandler);
+
   // Customers
   yield takeLatest(GET_CUSTOMERS_START, getCustomersHandler);
   yield takeLatest(CREATE_CUSTOMER_START, createCustomerHandler);
